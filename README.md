@@ -9,7 +9,7 @@ A CRUD project using:
   - JPA Repository
   - Static Files
 - Single Jar application
-
+- Sqlite as Database
 
 # To Run
 - Download the project
