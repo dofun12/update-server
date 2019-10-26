@@ -9,3 +9,9 @@ A CRUD project using:
   - JPA Repository
   - Static Files
 - Single Jar application
+
+
+# To Run
+- Download the project
+- Run mvn:run
+- Open the http://localhost:8080
