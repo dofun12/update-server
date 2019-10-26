@@ -16,13 +16,14 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-2">
-                <a href="/" id="logo">Site Teste</a>
-                <nav>
-                    <ul>
-                        <li><a ui-sref="list">Listar</a></li>
-                        <li><a ui-sref="nova">Novo upload</a></li>
-                    </ul>
-                </nav>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" ui-sref="list">Listar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ui-sref="nova" >Novo upload</a>
+                    </li>
+                </ul>
             </div>
             <div ui-view class="col-10" />
         </div>
