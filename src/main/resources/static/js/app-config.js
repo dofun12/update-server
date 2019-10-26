@@ -27,6 +27,15 @@ meuapp
         ;
     });
 console.log('Starting app-controller');
-meuapp.controller('AppController', function($scope) {
-
+meuapp.controller('AppController', function($scope,$transitions) {
+    $scope.currentState = 'none';
+    $transitions.onStart({}, function(trans) {
+        trans.promise.then(function (value) {
+            $scope.currentState = value.name;
+        });
+    });
+    $scope.isActive = function (link) {
+        console.log('Comparando....',link,$scope.currentState, link === $scope.currentState);
+        return link === $scope.currentState;
+    }
 });

@@ -18,10 +18,10 @@
             <div class="col-2">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link" ui-sref="list">Listar</a>
+                        <a class="nav-link" ng-class="{'disabled': isActive('list')}" ui-sref="list">Listar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" ui-sref="nova" >Novo upload</a>
+                        <a class="nav-link" ng-class="{'disabled' : isActive('nova')}" ui-sref="nova" >Novo versão</a>
                     </li>
                 </ul>
             </div>
