@@ -1,0 +1,14 @@
+@import "/js/bootstrap-4.3.1-dist/css/bootstrap.min.css";
+@import "/js/fontawesome-free-5.11.2-web/css/all.css";
+
+.tabela{
+
+}
+.tabela-titulo-row{
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+    margin-top: 15px;
+}
+.tabela-titulo{
+    font-weight: bold;
+}

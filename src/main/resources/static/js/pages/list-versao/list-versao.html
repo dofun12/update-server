@@ -1,0 +1,39 @@
+<div ng-controller="ListVersaoController as listCtr">
+    <div class="row">
+        <h2 class="col-10">Lista de versoes</h2>
+        <div class="col-2"><a class="btn btn-primary float-right" ui-sref="nova">Novo</a> </div>
+    </div>
+    <div class="tabela">
+        <div class="row tabela-titulo-row">
+            <div class="col">
+                <span class="tabela-titulo">Nome</span>
+            </div>
+            <div class="col">
+                <span class="tabela-titulo">Data release</span>
+            </div>
+            <div class="col">
+                <span class="tabela-titulo">Status</span>
+            </div>
+            <div class="col  text-right">
+                <span class="tabela-titulo">Action</span>
+            </div>
+        </div>
+        <div ng-repeat="item in versoes"  style="padding: 10px;border-bottom: 1px solid #eee;" class="row">
+            <div class="col">
+                {{item.nome}}
+            </div>
+            <div class="col">
+                {{formatDate(item.dataRelease)}}
+            </div>
+            <div class="col">
+                {{item.status}}
+            </div>
+            <div class="col">
+                <button class="btn btn-secondary float-right  ml-2" ui-sref="editar({id: item.id})"><i class="fas fa-edit"></i></button>
+                <button class="btn btn-secondary float-right" ui-sref="editar({id: item.id})"><i class="fas fa-file"></i></button>
+            </div>
+        </div>
+    </div>
+
+
+</div>
