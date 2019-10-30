@@ -1,5 +1,29 @@
-angular.module('meuapp')
-    .controller('FileSelectorController', function($http,$scope,$uibModal) {
+angular.module('meuapp').component('modalComponent', {
+    templateUrl: '/js/pages/modal-fileselector/modal-fileselector.html',
+    bindings: {
+        resolve: '<',
+        close: '&',
+        dismiss: '&'
+    },
+    controller: function ($scope) {
+        var $ctrl = this;
+
+        $ctrl.$onInit = function () {
+            $ctrl.items = $ctrl.resolve.items;
+            $ctrl.selected = {
+                item: $ctrl.items[0]
+            };
+            $scope.listDirectory(null);
+        };
+
+        $ctrl.ok = function () {
+            $ctrl.close({$value: $ctrl.selected.item});
+        };
+
+        $ctrl.cancel = function () {
+            $ctrl.dismiss({$value: 'cancel'});
+        };
+
         $scope.list = [];
         $scope.parent = '';
         $scope.diretorio = {};
@@ -47,26 +71,6 @@ angular.module('meuapp')
                 $scope.listDirectory(item.path);
             }
         };
-
-        $scope.openComponentModal = function () {
-            console.log('Abrindo modal');
-            var modalInstance = $uibModal.open({
-                animation: false,
-                component: 'modalComponent',
-                resolve: {
-                    items: function () {
-                        return [];
-                    }
-                }
-            });
-
-            modalInstance.result.then(function (selectedItem) {
-                $ctrl.selected = selectedItem;
-            }, function () {
-                $log.info('modal-component dismissed at: ' + new Date());
-            });
-        };
-
         $scope.listDirectory(null);
 
 
@@ -83,10 +87,5 @@ angular.module('meuapp')
             }
 
         };
-
-
-        $scope.formatDate = function(time){
-            return new moment(time,'x').format('DD/MM/YYYY');
-        }
-
-    });
+    }
+});

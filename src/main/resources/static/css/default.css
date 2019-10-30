@@ -12,3 +12,11 @@
 .tabela-titulo{
     font-weight: bold;
 }
+.fa-folder{
+    color: lightgoldenrodyellow;
+}
+.modal-backdrop{
+    background-color: #eee;
+    opacity: 0.6;
+
+}
