@@ -23,6 +23,11 @@ meuapp
                 controller: 'ListVersaoController',
                 templateUrl: '/js/pages/list-versao/list-versao.html'
             })
+            .state('files', {
+                url: "/files",
+                controller: 'FileSelectorController',
+                templateUrl: '/js/pages/file-selector/file-selector.html'
+            })
 
         ;
     });

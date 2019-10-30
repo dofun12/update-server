@@ -1,0 +1,22 @@
+<div ng-controller="FileSelectorController as fc">
+
+    <div class="row">
+        <h2 class="col-10" style="padding: 0;">Arquivos</h2>
+        <div class="col-2"><a class="btn btn-primary float-right" ui-sref="nova">Novo</a> </div>
+        <span class="col-12" style="padding: 0;">{{decodeBase64(diretorio.path)}}</span>
+    </div>
+    <div class="tabela">
+        <div class="row tabela-titulo-row">
+            <div class="col">
+                <span class="tabela-titulo">Nome</span>
+            </div>
+        </div>
+        <div ng-repeat="item in list"  style="padding: 10px;border-bottom: 1px solid #eee;" class="row" ng-click="selectFile(item)" >
+            <div class="col">
+                <i class="fas" style="margin-right: 10px;" ng-class="{'fa-file': !item.dir, 'fa-folder': item.dir}"></i>{{item.nome}}
+            </div>
+        </div>
+    </div>
+
+
+</div>
