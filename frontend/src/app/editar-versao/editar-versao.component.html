@@ -1,0 +1,39 @@
+<div ng-controller="NovaVersaoController as ctr">
+  <div class="row">
+    <h2 class="col-12">Teste</h2>
+    <div class="col-12 form-group">
+      <label> Nome</label>
+      <input  class="form-control" type="text" [(ngModel)]="versaoSelecionada.nome"/>
+    </div>
+    <div class="col-12 form-group">
+      <label>Status</label>
+      <input class="form-control" type="text" [(ngModel)]="versaoSelecionada.status"/>
+    </div>
+    <div class="col-12 form-group">
+      <label>Data Release</label>
+      <p class="input-group">
+        <input type="text" class="form-control"
+               [(ngModel)]="versaoSelecionada.dataRelease"
+               is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true"
+               close-text="Close" alt-input-formats="altInputFormats"/>
+        <span class="input-group-btn">
+                    <button type="button" class="btn btn-primary" ng-click="open1()">
+                        <i class="fas fa-calendar"></i>
+                    </button>
+                </span>
+      </p>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col">
+      <a class="btn-lg btn-secondary  float-left" routerLink="/list-versao">Voltar</a>
+    </div>
+    <div class="col"></div>
+    <div class="col">
+      <button class="btn-lg btn-primary float-right" (click)="salvar()">Salvar</button>
+    </div>
+  </div>
+
+
+</div>

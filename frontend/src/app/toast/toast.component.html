@@ -1,0 +1,8 @@
+<div *ngFor="let toast of toastService.toasts">
+  <div [ngClass]="toast.type" class="default" (hide)="toastService.remove(toast)"
+  >
+    <span class="title">{{toast.header}}</span>
+    <span class="body">{{toast.body}}</span>
+  </div>
+</div>
+

@@ -6,17 +6,23 @@ import { AppComponent } from './app.component';
 import { ListVersaoComponent } from './list-versao/list-versao.component';
 import { MenuComponent } from './menu/menu.component';
 import {HttpClientModule} from "@angular/common/http";
+import { EditarVersaoComponent } from './editar-versao/editar-versao.component';
+import {FormsModule} from "@angular/forms";
+import { ToastComponent } from './toast/toast.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListVersaoComponent,
-    MenuComponent
+    MenuComponent,
+    EditarVersaoComponent,
+    ToastComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

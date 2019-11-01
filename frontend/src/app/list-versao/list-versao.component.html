@@ -1,7 +1,7 @@
 <div >
   <div class="row">
     <h2 class="col-10" style="padding: 0;">Lista de versões</h2>
-    <div class="col-2"><a class="btn btn-primary float-right" ui-sref="nova">Novo</a> </div>
+    <div class="col-2"><a class="btn btn-primary float-right" routerLink="/nova-versao/">Novo</a> </div>
   </div>
   <div class="tabela">
     <div class="row tabela-titulo-row">
@@ -29,8 +29,8 @@
         {{row.status}}
       </div>
       <div class="col">
-        <button class="btn btn-secondary float-right  ml-2" ui-sref="editar({id: item.id})"><i class="fas fa-edit"></i></button>
-        <button class="btn btn-secondary float-right" ui-sref="editar({id: item.id})"><i class="fas fa-file"></i></button>
+        <button class="btn btn-secondary float-right  ml-2" [routerLink]="'/editar-versao/'+row.id" ><i class="fas fa-edit"></i></button>
+        <button class="btn btn-secondary float-right" ><i class="fas fa-file"></i></button>
       </div>
     </div>
   </div>
