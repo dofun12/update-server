@@ -23,18 +23,39 @@ public class VersaoController extends DefaultController {
     private VersaoRepository versaoRepository;
 
     @GetMapping
-    public Iterable findAll() {
-        return versaoRepository.findAll();
+    public String findAll() {
+        Resposta resposta = new Resposta();
+        try {
+            resposta.setResposta(versaoRepository.findAll());
+            resposta.setSucesso(true);
+        }catch (Exception ex){
+            resposta.setMensagem("Erro: "+ex.getMessage());
+        }
+        return  sendResponse(resposta);
     }
 
     @GetMapping("/versao/{versao}")
-    public List findByTitle(@PathVariable String versao) {
-        return versaoRepository.findByNome(versao);
+    public String findByTitle(@PathVariable String versao) {
+        Resposta resposta = new Resposta();
+        try {
+            resposta.setResposta( versaoRepository.findByNome(versao));
+            resposta.setSucesso(true);
+        }catch (Exception ex){
+            resposta.setMensagem("Erro: "+ex.getMessage());
+        }
+        return  sendResponse(resposta);
     }
 
     @GetMapping("/{id}")
-    public Versao findOne(@PathVariable Long id) {
-        return versaoRepository.findById(id).orElseThrow(BookNotFoundException::new);
+    public String findOne(@PathVariable Long id) {
+        Resposta resposta = new Resposta();
+        try {
+            resposta.setResposta( versaoRepository.findById(id).orElseThrow(BookNotFoundException::new));
+            resposta.setSucesso(true);
+        }catch (Exception ex){
+            resposta.setMensagem("Erro: "+ex.getMessage());
+        }
+        return  sendResponse(resposta);
     }
 
     @PostMapping

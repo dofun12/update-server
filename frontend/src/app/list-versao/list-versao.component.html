@@ -18,15 +18,15 @@
         <span class="tabela-titulo">Action</span>
       </div>
     </div>
-    <div ng-repeat="item in versoes"  style="padding: 10px;border-bottom: 1px solid #eee;" class="row">
+    <div *ngFor="let row of list"  style="padding: 10px;border-bottom: 1px solid #eee;" class="row">
       <div class="col">
-        NOME
+        {{row.nome}}
       </div>
       <div class="col">
-        DATA RELEASE
+        {{row.dataRelease}}
       </div>
       <div class="col">
-        STATUS
+        {{row.status}}
       </div>
       <div class="col">
         <button class="btn btn-secondary float-right  ml-2" ui-sref="editar({id: item.id})"><i class="fas fa-edit"></i></button>

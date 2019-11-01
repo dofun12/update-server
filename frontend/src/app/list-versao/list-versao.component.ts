@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {VersaoService} from "../_services/versao.service";
+import {Versao} from "../_dto/versao";
 
 @Component({
   selector: 'app-list-versao',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListVersaoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private versaoService: VersaoService) { }
+
+  list: Versao[];
 
   ngOnInit() {
+    this.getList();
+  }
+
+  getList(){
+    this.versaoService.getList().subscribe(resposta => {
+      if(resposta.sucesso){
+        this.list = resposta.resposta;
+      }
+    });
   }
 
 }
