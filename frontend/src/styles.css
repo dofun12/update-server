@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+.tabela{
+
+}
+.tabela-titulo-row{
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+  margin-top: 15px;
+}
+.tabela-titulo{
+  font-weight: bold;
+}
+.fa-folder{
+  color: lightgoldenrodyellow;
+}
+.modal-backdrop{
+  background-color: #eee;
+  opacity: 0.6;
+
+}

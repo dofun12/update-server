@@ -1,0 +1,19 @@
+<project>
+
+    <target name="npm-install">
+        <exec dir="./frontend/" executable="cmd.exe" output="npm-install.txt">
+            <arg line="/c npm install"/>
+        </exec>
+    </target>
+
+    <target depends="npm-install" name="build-release">
+        <delete dir="src/main/resources/webstatic" />
+        <exec dir="./frontend/" executable="cmd.exe" spawn="false"
+              failonerror="true"
+              outputproperty="baroverride.out">
+            <arg line="/c ng build --outputHashing=none  --prod --output-path ../src/main/resources/webstatic"/>
+        </exec>
+        <echo>baroverride.out: ${baroverride.out}</echo>
+    </target>
+
+</project>

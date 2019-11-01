@@ -1,0 +1,53 @@
+
+<!doctype html>
+<html ng-app="meuapp" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="/css/default.css" rel="stylesheet" type="text/css">
+</head>
+<body ng-controller="AppController">
+<header>
+    <div style="/* vertical-align: middle; */height: 200px;width: 100%;background-color: #0c5460;margin-bottom: 10px;padding-top: 50px;">
+        <span style="width: 100%;text-align: center;color: white;display: block;font-size: 3em;">Gerenciador de versões</span>
+    </div>
+</header>
+<div>
+    <div class="notify-box" id="id-notify-box"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" ng-class="{'disabled': isActive('list')}" ui-sref="list">Listar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ng-class="{'disabled' : isActive('nova')}" ui-sref="nova" >Nova versão</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ng-class="{'disabled' : isActive('files')}" ui-sref="files" >Arquivos</a>
+                    </li>
+                </ul>
+            </div>
+            <div ui-view class="col-10" />
+        </div>
+
+
+    </div>
+</div>
+
+
+<script src="/js/angular/angular.min.js" type="application/javascript"></script>
+<script src="/js/angular/angular-ui-router.min.js" type="application/javascript"></script>
+<script src="/js/jquery/jquery-3.4.1.min.js" type="application/javascript"></script>
+<script src="/js/moment/moment-with-locales.min.js" type="application/javascript"></script>
+<script src="/js/bootstrap-4.3.1-dist/js/bootstrap.min.js" type="application/javascript"></script>
+<script src="/js/angular/ui-bootstrap-tpls-2.5.0.min.js" type="application/javascript"></script>
+<script src="/js/app-config.js" type="application/javascript"></script>
+<script src="/js/pages/list-versao/list-versao.js" type="application/javascript"></script>
+<script src="/js/pages/nova-versao/nova-versao.js" type="application/javascript"></script>
+<script src="/js/pages/file-selector/file-selector.js" type="application/javascript"></script>
+<script src="/js/pages/modal-fileselector/modal-fileselector.js" type="application/javascript"></script>
+
+</body>
+</html>

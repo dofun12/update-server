@@ -21,7 +21,8 @@ public class MvcConfig implements WebMvcConfigurer {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry
                 .addResourceHandler("/**")
-                .addResourceLocations("classpath:/static/");
+                //.addResourceLocations("classpath:/static/");
+                .addResourceLocations("classpath:/webstatic/");
     }
 
     @Bean
