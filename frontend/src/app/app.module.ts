@@ -9,6 +9,8 @@ import {HttpClientModule} from "@angular/common/http";
 import { EditarVersaoComponent } from './editar-versao/editar-versao.component';
 import {FormsModule} from "@angular/forms";
 import { ToastComponent } from './toast/toast.component';
+import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import {DateFormatPipe} from "./_pipes/dateFormatPipe";
 
 @NgModule({
   declarations: [
@@ -16,13 +18,15 @@ import { ToastComponent } from './toast/toast.component';
     ListVersaoComponent,
     MenuComponent,
     EditarVersaoComponent,
+    DateFormatPipe,
     ToastComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

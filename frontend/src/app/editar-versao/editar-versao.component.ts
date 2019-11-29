@@ -5,6 +5,7 @@ import {Versao} from "../_dto/versao";
 import {Observable} from "rxjs";
 import {Resposta} from "../_dto/resposta";
 import {ToastService} from "../_services/toast.service";
+import {NgbDateStruct} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-editar-versao',
@@ -19,6 +20,7 @@ export class EditarVersaoComponent implements OnInit {
   selectedId: string;
   isNew = true;
   versaoSelecionada: Versao =  new Versao();
+  date: NgbDateStruct = { year: 1789, month: 7, day: 14 }; // July, 14 1789
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
@@ -60,7 +62,6 @@ export class EditarVersaoComponent implements OnInit {
       });
     }
   }
-
 
 
 }

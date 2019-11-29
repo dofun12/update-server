@@ -12,15 +12,8 @@
     <div class="col-12 form-group">
       <label>Data Release</label>
       <p class="input-group">
-        <input type="text" class="form-control"
-               [(ngModel)]="versaoSelecionada.dataRelease"
-               is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true"
-               close-text="Close" alt-input-formats="altInputFormats"/>
-        <span class="input-group-btn">
-                    <button type="button" class="btn btn-primary" ng-click="open1()">
-                        <i class="fas fa-calendar"></i>
-                    </button>
-                </span>
+        <input class="form-control" type="text" ngbDatepicker #d="ngbDatepicker"  [(ngModel)]="date"/>
+        <button (click)="d.toggle()"><i class="fa fa-calendar"></i> </button>
       </p>
     </div>
 
